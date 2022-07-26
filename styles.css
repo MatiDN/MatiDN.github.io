@@ -1,0 +1,335 @@
+:root{
+    --main-violet: #2C2C54;
+    --main-xiketic: #18020C;
+}
+*{
+    font-family: 'Sora', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+html{
+    box-sizing: border-box;
+    color: white;
+}
+body{
+    scroll-behavior: smooth;
+}
+#navbar{
+    width: 100%;
+    height: 50px;
+    z-index: 1;
+    top: 0;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4B0625;
+    color: white;
+    border-radius: 0 0 10px 10px;
+}
+
+#navbar p{
+    justify-content: left;
+    font-size: 20px;
+    margin-left: 10px;
+}
+#nav-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+}
+#nav-list a{
+    padding: 15px;
+    text-decoration: none;
+    color: white;
+    border-radius: 0 0 10px 10px;
+    transition: 0.25s;
+}
+#nav-list a:hover{
+    color: #4B0625;
+    background-color: white;
+}
+ul {
+    list-style: none;
+}
+
+/* ABOUT */
+
+#about{
+    width: 100%;
+    height: 100vh;
+    color: white;
+    background-color: var(--main-xiketic);
+    /* background-image: linear-gradient(62deg,#5454A0 0%,var(--main-violet) 50%); */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#title-section{
+    display: flex;
+    align-items: center;
+    margin-left: 70px;
+    font-size: 30px;
+    text-shadow: black 1px 1px 6px;
+}
+#welcome-section2{
+    font-size: 30px;
+    text-align: left;
+    margin-right: 300px;
+}
+#welcome-section2 .web{
+    text-align: right;
+}
+
+.static-txt{
+    font-weight: 100;
+}
+.dynamic-txt h2{
+    font-weight: 500;
+    animation: type 3.5s ease-out;
+    overflow: hidden;
+    white-space: nowrap;
+}
+@keyframes type {
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 11.3ch;
+    }
+}
+
+/* TERMINA ABOUT */
+
+/* PROJECTS */
+
+#projects{
+    background-color:#001829;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) ;
+    grid-template-areas: "title-projects projects-h3"
+                         "title-projects projects-grid";
+}
+#projects h3{
+    display: grid;
+    text-align: center;
+    align-content: center;
+    grid-area: projects-h3;
+    margin-top: 40px;
+}
+#title-projects{
+    display: grid;
+    margin-left: 70px;
+    font-size: 30px;
+    align-content: center;
+    grid-area: title-projects;
+    text-shadow: black 1px 1px 6px;
+}
+#projects-grid{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-area: projects-grid;
+}
+#projects h3 .fino{
+    font-weight: 100;
+    padding-top: 20px;
+}
+.project-tile{
+    position: relative;
+    width: 80%;
+    height: 180px;
+    margin: 10px;
+    transition: 0.5s;
+    text-align: center;
+}
+.project-img, .project-title{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#projects img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: black 1px 1px 6px;
+    object-fit: cover;
+}
+.project-title{
+    background: var(--main-xiketic);
+    opacity: 0;
+    transition: 0.5s;
+}
+.project-tile p{
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.project-tile:hover .project-title{
+    opacity: 1;
+}
+.upper{
+    padding-top: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+/* CONTACT */
+
+#contact{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: space-between;
+    align-items: center;
+    background-color:var(--main-xiketic);
+}
+.media{
+    margin-right: 100px;
+}
+#contact p{
+    font-size: 25px;
+    font-weight: 350;
+    align-items: center;
+    text-align: center;
+    margin: 35px;
+}
+#contact ul{
+    justify-content: center;
+    position: relative;
+    display: flex;
+}
+#contact ul li{
+    position: relative;
+    list-style: none;
+    margin: 0 20px;
+    cursor: pointer;
+}
+#contact ul li a{
+    text-decoration: none;
+}
+#contact ul li a .fa{
+    font-size: 5em;
+    color: #222;
+}
+#contact ul li::before{
+    font-family: "FontAwesome";
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 5em;
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s ease-in-out;
+}
+#contact ul li:nth-child(1)::before{
+    content: "\f232";
+    color: #25D366;
+    border-bottom: 4px solid #25D366;
+}
+#contact ul li:nth-child(2)::before{
+    content: "\f09b";
+    color: white;
+    border-bottom: 4px solid white;
+}
+#contact ul li:nth-child(3)::before{
+    content: "\f08c";
+    color: #0288d1;
+    border-bottom: 4px solid#0288d1;
+}
+#contact ul li:nth-child(4)::before{
+    content:"\f003";
+    color: #f14436;
+    border-bottom: 4px solid #f14436;
+}
+
+#contact ul li:hover::before{
+    height: 100%;
+}
+
+/* TERMINA CONTACT */
+
+/* FOOTER */
+footer{
+    background-color:var(--main-xiketic);
+    color: grey;
+}
+/* TERMINA FOOTER */
+
+/* @MEDIA'S */
+
+@media (max-width:500px){
+    #about{
+        display: flex;
+        align-content: center;
+        flex-direction: column;
+        text-align: center;
+        justify-content: space-evenly;
+    }
+    #welcome-section2{
+        margin: 0;
+        font-size: 25px;
+    }
+    #projects{
+        display: flex;
+        align-content: center;
+        flex-direction: column;
+        text-align: center;
+    }
+    #projects-grid{
+        display: flexbox;
+    }
+    #nav-list{
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        right: 30px;
+        font-size: 10px;
+    }
+    #nav-list a{
+        padding: 5px;
+    }
+    #title-projects, #title-section{
+        margin-left: 0;
+        font-size: 20px;
+    }
+    #title-projects{
+        margin: 15px auto 10px auto;
+
+    }
+    #contact{
+        display: flex;
+        align-content: center;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+    }
+    .media{
+        margin-right: 0;
+        font-size: 10px;
+    }
+    #contact p{
+        font-size: 10px;
+    }
+    .project-tile{
+        top: 25%;
+        left: 15%;
+        position: relative;
+        width: 60%;
+        height: 100px;
+        margin: 10px;
+        transition: 0.5s;
+        text-align: center;
+        align-content: center;
+    }
+}
+
